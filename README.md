@@ -20,10 +20,12 @@ a way to control Plex from Indigo.
 > using the plugin and confirm that any triggers you use behave the way you expect them to.
  
 > [!Warning]
-> As of now, Plex webhooks are tied to a Plex account. Therefore, any players tied to the account will trigger the webhook payload to be sent. You should be very mindful of the types of automation you trigger with this plugin!
+> As of now, Plex webhooks are tied to a Plex account. Therefore, any players tied to the account will trigger the 
+> webhook payload to be sent. You should be very mindful of the types of automation you trigger with this plugin!
 
 #### Requirements
-  * Active [Plex Pass Subscription](https://support.plex.tv/articles/categories/intro-to-plex/plex-pass-subscriptions/) - the Plex webhook feature is only available to Plex Pass subscribers.
+  * Active [Plex Pass Subscription](https://support.plex.tv/articles/categories/intro-to-plex/plex-pass-subscriptions/) 
+    - the Plex webhook feature is only available to Plex Pass subscribers.
   * Authenticated Communications Path - there needs to be a valid path for the webhook payload to reach Indigo. The 
     plugin doesn't provide a means to configure IP routes or ports, and authentication is beyond the scope of this 
     readme.
@@ -57,9 +59,9 @@ unusual about setting them up.
   * Select "Plex Webhooks Event",
   * Select "Media Event",
   * Event: Select the event you want to trigger automation: pause, play, resume or stop.
-  * Local Events Only: If you want players outside your LAN to be able to trigger automation, deselect the Local Events checkbox. It's 
-    assumed that most uses would only be desired when Plex is being used locally (you probably don't want your lights 
-    to dim if you're watching a movie in a hotel, for example.)
+  * Local Events Only: If you want players outside your LAN to be able to trigger automation, deselect the Local Events 
+    checkbox. It's assumed that most uses would only be desired when Plex is being used locally (you probably don't 
+    want your lights to dim if you're watching a movie in a hotel, for example.)
   * Media Types: Use this field to identify the media types you want to use the Trigger for. For example, you might 
     want to dim the lights when watching a movie, but not when you're listening to music.
 
