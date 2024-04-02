@@ -1,18 +1,26 @@
 ### Plex Webhooks Plugin
+According to Plex,
+> Webhooks are a Plex Pass feature which allow you to configure one or more URLs to be hit by the Plex Media Server 
+> when certain things happen. You can use webhooks for any number of purposes: home automation (such as dimming lights 
+> when you start playback), posting to Slack or Twitter, or many other things. 
 
-> [!Warning]
-> This plugin is experimental. It has been tested, but under narrow circumstances. You should use caution when 
-> using the plugin and confirm that any triggers you use behave the way you expect them to.
-
-This is an extremely simple plugin that connects Plex Server [webhooks](https://support.plex.tv/articles/115002267687-webhooks/) to Indigo. It reacts to four events from 
+**What this plugin is**:  
+an extremely simple plugin that connects Plex Server [webhooks](https://support.plex.tv/articles/115002267687-webhooks/) to Indigo. It reacts to four events from 
 the Plex webhook API:
   * `media.pause` - Plex client pauses playback.
   * `media.play` - Plex client initiates playback.
   * `media.resume` - Plex client resumes playback.
   * `media.stop` - Plex client stops playback.
 
-> [!Note]
-> What this plugin is not: a way to control Plex from Indigo.
+**What this plugin is not**:  
+a way to control Plex from Indigo.
+
+> [!Warning]
+> This plugin is experimental. It has been tested, but under narrow circumstances. You should use caution when 
+> using the plugin and confirm that any triggers you use behave the way you expect them to.
+ 
+> [!Warning]
+> As of now, Plex webhooks are tied to a Plex account. Therefore, any players tied to the account will trigger the webhook payload to be sent. You should be very mindful of the types of automation you trigger with this plugin!
 
 #### Requirements
   * Active [Plex Pass Subscription](https://support.plex.tv/articles/categories/intro-to-plex/plex-pass-subscriptions/) - the Plex webhook feature is only available to Plex Pass subscribers.
@@ -58,14 +66,11 @@ unusual about setting them up.
 ![trigger_config.png](img%2Ftrigger_config.png)
 
 #### Automations
-For example, you can dim the lights and set a thermostat when you play a movie, and bring the lights back up when you 
-pause or stop.
+Once you've configured your triggers, you can use them to dim the lights and set a thermostat when you play a movie, 
+and bring the lights back up when you pause or stop the movie.
 
 > [!Note]
-> Not all Plex media selections generate webhook events. For example, "Movies & Shows on Plex" do not generate webhook 
-calls. This is due to Plex and not due to the plugin.
-
-> [!Warning]
-> As of now, Plex webhooks are tied to a Plex account. Therefore, any players tied to the account will trigger the webhook payload to be sent. You should be very mindful of the types of automation you trigger with this plugin!
+> Not all Plex media selections generate webhook events. For example, "Movies & Shows on Plex" does not generate a 
+> webhook call. This is due to Plex and not due to the plugin.
 
 [current as of Indigo 2023.2 and Plex Version 4.125.1]
