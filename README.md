@@ -7,7 +7,8 @@ the Plex webhook API:
   * `media.resume` - Plex client resumes playback.
   * `media.stop` - Plex client stops playback.
 
-> [!Note]What this plugin is not: a way to control Plex from Indigo.
+> [!Note]
+> What this plugin is not: a way to control Plex from Indigo.
 
 #### Requirements
   * Active [Plex Pass Subscription](https://support.plex.tv/articles/categories/intro-to-plex/plex-pass-subscriptions/) - the Plex webhook feature is only available to Plex Pass subscribers.
@@ -21,10 +22,10 @@ the Plex webhook API:
 A properly configured webhook URL is critical to the function of the plugin. It can be different depending on your 
 environment, but generally looks something like this:
 
-`http://10.0.1.123:8176/message/com.fogbert.indigoplugin.plexWebhooks/incoming_webhook/?api-key=abc123def456&player=Parlor`
+`http://10.0.1.123:8176/message/com.fogbert.indigoplugin.plexWebhooks/incoming_webhook/?api-key=abc123def456`
 
   * `http://10.0.1.123` - the IP of the Indigo server running the plugin. It can be local, localhost, 127.0.0.1, or an 
-    active Indigo Reflector address. If local, use `http` and use `https` with the Indigo Reflector service
+    active Indigo Reflector address. If local, use `http` and use `https` with the Indigo Reflector service.
   * `8176` - the appropriate port for the Indigo server (not required with Reflector addresses).
   * `message` - tells the Indigo server that the incoming message is for a plugin.
   * `com.fogbert.indigoplugin.plexServer` - the plist ID of this plugin.
@@ -32,7 +33,7 @@ environment, but generally looks something like this:
   * `api-key=abc123def456` - a valid API key. It can be a valid Reflector access key or a local secret key if your
     version of Indigo supports them.
 
-That's all that should be required to configure the plugin. 
+That's all that should be required to configure Plex webhooks to work with the plugin. 
 
 #### Triggers
 To actually use the plugin, you need to create Indigo triggers to respond to the incoming webhook. There is nothing 
@@ -52,8 +53,11 @@ unusual about setting them up.
 For example, you can dim the lights and set a thermostat when you play a movie, and bring the lights back up when you 
 pause or stop.
 
-#### Notes
-* Not all Plex media selections generate webhook events. For example, "Movies & Shows on Plex" do not generate webhook 
+> [!Note]
+> Not all Plex media selections generate webhook events. For example, "Movies & Shows on Plex" do not generate webhook 
 calls. This is due to Plex and not due to the plugin.
+
+> [!Warning]
+> As of now, Plex webhooks are tied to a Plex account. Therefore, any players tied to the account will trigger the webhook payload to be sent. You should be very mindful of the types of automation you trigger with this plugin!
 
 [current as of Indigo 2023.2 and Plex Version 4.125.1]
