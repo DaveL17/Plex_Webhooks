@@ -15,7 +15,7 @@ class Plugin(indigo.PluginBase):
     def __init__(self, plugin_id, plugin_display_name, plugin_version, plugin_prefs):
         super().__init__(plugin_id, plugin_display_name, plugin_version, plugin_prefs)
         self.plugin_file_handler.setFormatter(logging.Formatter(LOG_FORMAT, datefmt='%Y-%m-%d %H:%M:%S'))
-        self.indigo_log_handler.setLevel(10)
+        self.indigo_log_handler.setLevel(20)
 
     def run_concurrent_thread(self):  # noqa
         try:
