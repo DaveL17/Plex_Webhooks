@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<!-- This action is called by the Plex webhook -->
+<Actions>
+	<Action id="incoming_webhook" uiPath="hidden">
+        <Name>Incoming Webhook</Name>
+        <CallbackMethod>incoming_webhook</CallbackMethod>
+    </Action>
+</Actions>

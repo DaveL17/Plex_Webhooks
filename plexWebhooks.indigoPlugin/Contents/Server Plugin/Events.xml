@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!-- This action is called by the Plex webhook -->
+<Events>
+	<Event id="mediaEvent">
+        <Name>Media Event</Name>
+        <ConfigUI>
+            <Field id="label1" type="label">
+                <Label>Trigger should fire when the following event occurs.</Label>
+            </Field>
+             <Field id="event" type="menu">
+                <Label>Event:</Label>
+                <List>
+                    <Option value="media.pause">Pause</Option>
+                    <Option value="media.play">Play</Option>
+                    <Option value="media.resume">Resume</Option>
+                    <Option value="media.stop">Stop</Option>
+                </List>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="localPlayer" type="checkbox" defaultValue="True">
+                <Label>Local Events Only:</Label>
+                <Description>Trigger should fire only when the Plex player is local.</Description>
+            </Field>
+            <Field id="sep3" type="separator"/>
+            <Field id="label3" type="label">
+                <Label>Trigger should fire for these media types.</Label>
+            </Field>
+            <Field id="mediaTypes" type="list" defaultValue="movie, photo, show, track" rows="4">
+                <Label>Media Types:</Label>
+                <List>
+                    <Option value="movie">Movie</Option>
+                    <Option value="photo">Photo</Option>
+                    <Option value="show">Show</Option>
+                    <Option value="track">Track</Option>
+                </List>
+            </Field>
+        </ConfigUI>
+    </Event>
+</Events>
