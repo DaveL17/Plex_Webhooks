@@ -54,6 +54,7 @@ class Plugin(indigo.PluginBase):
         is_local   = payload['Player']['local']
         player     = payload['Player']['title']
         self.logger.debug(f"Trigger event [{event}] received from player [{player}].")
+        self.logger.debug(f"{payload}")
 
         try:
             # Iterate through all triggers.

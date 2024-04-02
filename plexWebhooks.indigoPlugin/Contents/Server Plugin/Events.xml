@@ -31,7 +31,7 @@
                 <List>
                     <Option value="movie">Movie</Option>
                     <Option value="photo">Photo</Option>
-                    <Option value="show">Show</Option>
+                    <Option value="episode">Show</Option>
                     <Option value="track">Track</Option>
                 </List>
             </Field>
