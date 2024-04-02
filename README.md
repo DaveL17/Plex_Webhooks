@@ -1,5 +1,9 @@
 ### Plex Webhooks Plugin
 
+> [!Warning]
+> This plugin is experimental. It has been tested, but under narrow circumstances. You should use caution when 
+> using the plugin and confirm that any triggers you use behave the way you expect them to.
+
 This is an extremely simple plugin that connects Plex Server [webhooks](https://support.plex.tv/articles/115002267687-webhooks/) to Indigo. It reacts to four events from 
 the Plex webhook API:
   * `media.pause` - Plex client pauses playback.
@@ -33,6 +37,8 @@ environment, but generally looks something like this:
   * `api-key=abc123def456` - a valid API key. It can be a valid Reflector access key or a local secret key if your
     version of Indigo supports them.
 
+![plex_webhook_screenshot.png](img%2Fplex_webhook_screenshot.png)
+
 That's all that should be required to configure Plex webhooks to work with the plugin. 
 
 #### Triggers
@@ -48,6 +54,8 @@ unusual about setting them up.
     to dim if you're watching a movie in a hotel, for example.)
   * Media Types: Use this field to identify the media types you want to use the Trigger for. For example, you might 
     want to dim the lights when watching a movie, but not when you're listening to music.
+
+![trigger_config.png](img%2Ftrigger_config.png)
 
 #### Automations
 For example, you can dim the lights and set a thermostat when you play a movie, and bring the lights back up when you 
